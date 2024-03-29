@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dice.css') }}">
+</head>
+<body>
+    <header id="header">
+     
+        <a class="nav-brand" href="" target="_blank">
+            <img id="header-img" src="https://i.postimg.cc/R0wcSFyJ/1683553984245-removebg-preview.png" alt="Securin">
+        </a>
+    
+        <nav id="nav-bar" class="navbar">
+          <ul class="menu">
+            <li><a class="nav-link" href="/dice">Home</a></li> 
+            <li><a class="nav-link" href="/ps">Problem Statement</a></li> 
+            <li><a class="nav-link" href="/solution">Solution Logic</a></li>
+            <li><a class="nav-link" href="/parta">Part A [RESULT]</a></li>
+            <li><a class="nav-link" href="/partb">[LOKI'S DOOMED DICE]</a></li>
+            <li><a class="nav-link" href="/result">PART B [RESULT]</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+
+  <section id="featured">
+
+      <span class="line"></span><br><br>
+      <h2>---------------SOLUTION LOGIC</h2>
+    </div>
+    <div class="wrapper">
+      <div class="image">
+        <img src="https://i.postimg.cc/cJZHpyt0/PART-B-LOKI-S-DOOMED-DICE-3.png" alt="logic">
+      </div>
+      
+      <div class="text">
+        <h3>-->"MEMOIZATION" in Probability Distribution of Dice Sums </h3>
+        <h4>[DYNAMIC PROGRAMMING]---->[TOP-DOWN]---->[MEMOIZATION]</h4>
+        <p>Given two six-sided dice, the task is to determine the probability of each possible sum that can result from rolling both dice. This involves finding the count of possible combinations, listing all combinations, and calculating the probability of each sum.</p>
+        <h3>-->Memoization Implementation in Python :</h3>
+<h3>*Memoization Table:</h3><p>Initially, a memoization table (memo) of size 13 is initialized. Each index of this table represents a possible sum of two dice rolls, ranging 2 to 12.</p> 
+
+<h3>Populating Memoization Table:</h3> <p>The nested loops iterate over all possible combinations of dice rolls. For each combination, the sum of the dice rolls is calculated, and the corresponding entry in the memoization table is incremented to record the frequency of that sum.</p>
+
+<h3>Probability Calculation:</h3> <p>After populating the memoization table, probabilities are calculated for each possible sum. The frequency of each sum in the memoization table is divided by the total number of combinations (36) to compute the probability.</p>
+
+<a href="/parta" id="calculate-btn">Let's go!</a>
+
+
+    <div id="result-container"></div>
+
+   
+    <script>
+        document.getElementById('calculate-btn').addEventListener('click', function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/calculate', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    document.getElementById('result-container').innerHTML = xhr.responseText;
+                } else {
+                    console.error('Request failed. Status:', xhr.status);
+                }
+            };
+            xhr.onerror = function() {
+                console.error('Request failed. Network error.');
+            };
+            xhr.send(JSON.stringify({}));
+        });
+    </script>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

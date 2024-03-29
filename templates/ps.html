@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dice.css') }}">
+</head>
+<body>
+    <header id="header">
+   
+        <a class="nav-brand" href="" target="_blank">
+            <img id="header-img" src="https://i.postimg.cc/R0wcSFyJ/1683553984245-removebg-preview.png" alt="Securin">
+        </a>
+        
+    
+        <nav id="nav-bar" class="navbar">
+          <ul class="menu">
+            <li><a class="nav-link" href="/dice">Home</a></li> 
+            <li><a class="nav-link" href="/ps">Problem Statement</a></li> 
+            <li><a class="nav-link" href="/solution">Solution Logic</a></li>
+            <li><a class="nav-link" href="/parta">Part A [RESULT]</a></li>
+            <li><a class="nav-link" href="/partb">[LOKI'S DOOMED DICE]</a></li>
+            <li><a class="nav-link" href="/result">PART B [RESULT]</a></li>
+          </ul>
+        </nav>
+      </header>
+
+  <section id="featured">
+
+      <span class="line"></span><br><br>
+      <h2>---------------The Doomed Dice Challenge</h2>
+    </div>
+    <div class="wrapper">
+      <div class="image">
+        <img src="https://i.postimg.cc/yx2twKdP/PART-B-LOKI-S-DOOMED-DICE-1.png" alt="Ps flow">
+      </div>
+      
+      <div class="text">
+        <h3>-->Problem Statement : </h3>
+        <p>Given two six-sided dice, the task is to determine the probability of each possible sum that can result from rolling both dice. This involves finding the count of possible combinations, listing all combinations, and calculating the probability of each sum.</p>
+        <h3>-->Key points of the problem statement:</h3>
+
+<h3>1.Dice Representation:</h3>
+<p> The dice are represented as arrays or array-like structures, where the indices represent the faces of the die, and the value on each face corresponds to the number displayed on that face.
+For example, Die A could be represented as [1, 2, 3, 4, 5, 6], indicating that its faces are numbered from 1 to 6.</p>
+ <h3>2.Rolling the Dice: </h3>
+<p>You can roll both dice together to obtain two individual results (one from each die) and their sum.
+For each roll, you randomly select a face from the respective die.</p>
+<h3>3.Processing the Results: </h3>
+<p>Once you obtain the results of the dice rolls, you can process them based on the obtained sum. This could involve various actions or decisions depending on the rules or logic specified in the problem.</p>
+        
+<a href="/solution" id="calculate-btn">Let's go!</a>
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>
